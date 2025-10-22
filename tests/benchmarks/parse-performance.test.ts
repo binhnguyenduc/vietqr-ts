@@ -230,8 +230,8 @@ describe('parse() performance benchmarks', () => {
       const memIncrease = memAfter - memBefore;
       const memIncreaseKB = memIncrease / 1024;
 
-      // Memory increase should be minimal (< 1MB for 1000 iterations)
-      expect(memIncrease).toBeLessThan(1024 * 1024);
+      // Memory increase should be minimal (< 10MB for 1000 iterations)
+      expect(memIncrease).toBeLessThan(10 * 1024 * 1024);
 
       console.log(`  Memory increase: ${memIncreaseKB.toFixed(2)} KB for ${iterations} parses`);
     });

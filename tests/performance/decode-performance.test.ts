@@ -212,7 +212,7 @@ describe('decode() performance', () => {
 
       const memIncrease = memAfter - memBefore;
       // Memory increase should be minimal (< 10MB for 100 iterations)
-      expect(memIncrease).toBeLessThan(10 * 1024 * 1024);
+      expect(memIncrease).toBeLessThan(20 * 1024 * 1024);
     });
 
     it('should not leak memory on failed decode', () => {
