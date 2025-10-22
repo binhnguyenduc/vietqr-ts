@@ -37,3 +37,8 @@ temp/
 *.tmp
 *.bak
 *.log
+
+# AI Development Artifacts
+.serena/
+.claude/
+*.claude-session
