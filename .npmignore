@@ -1,0 +1,46 @@
+# Source files (only dist/ should be published)
+src/
+tests/
+specs/
+
+# Configuration files
+.github/
+.vscode/
+.idea/
+.specify/
+claudedocs/
+
+# Test and coverage
+coverage/
+*.lcov
+test-results/
+vitest.config.ts
+
+# Build artifacts
+*.tsbuildinfo
+.eslintcache
+tsconfig.json
+tsup.config.ts
+
+# Documentation (except README)
+CONTRIBUTING.md
+TEST_SUMMARY.md
+TECHNICAL_DEBT.md
+
+# Development files
+.gitignore
+.eslintrc*
+.prettierrc*
+.editorconfig
+
+# Environment and logs
+.env*
+*.log
+npm-debug.log*
+yarn-debug.log*
+
+# Temporary files
+*.tmp
+*.swp
+*.swo
+.DS_Store

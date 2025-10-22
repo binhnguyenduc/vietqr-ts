@@ -1,0 +1,62 @@
+{
+  "name": "vietqr",
+  "version": "0.1.0",
+  "description": "TypeScript library for generating EMVCo-compliant VietQR data strings based on NAPAS IBFT v1.5.2 specification",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "test": "vitest",
+    "test:coverage": "vitest --coverage",
+    "test:watch": "vitest --watch",
+    "type-check": "tsc --noEmit",
+    "lint": "eslint src/**/*.ts",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "vietqr",
+    "napas",
+    "qr-code",
+    "payment",
+    "emvco",
+    "vietnam",
+    "banking"
+  ],
+  "author": "",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/binhnguyenduc/vietqr.git"
+  },
+  "bugs": {
+    "url": "https://github.com/binhnguyenduc/vietqr/issues"
+  },
+  "homepage": "https://github.com/binhnguyenduc/vietqr#readme",
+  "devDependencies": {
+    "@types/pngjs": "^6.0.5",
+    "@types/qrcode": "^1.5.5",
+    "@vitest/coverage-v8": "^3.2.4",
+    "tsup": "^8.5.0",
+    "typescript": "^5.9.3",
+    "vitest": "^3.2.4"
+  },
+  "dependencies": {
+    "crc": "^4.3.2",
+    "jpeg-js": "^0.4.4",
+    "pngjs": "^7.0.0",
+    "qr": "^0.5.2",
+    "qrcode": "^1.5.4"
+  }
+}
