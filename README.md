@@ -715,10 +715,19 @@ MIT © Binh Nguyen
 - [QRCode](https://github.com/soldair/node-qrcode) - QR code generation library
 - [NAPAS](https://napas.com.vn) - Vietnam National Payment Corporation
 
+## Documentation
+
+- **API Reference**: [Context7-Style Docs](./docs/context7/) - LLM-friendly comprehensive documentation
+- **Common Patterns**: [Usage Recipes](./docs/context7/common-patterns.md) - Real-world examples
+- **Troubleshooting**: [Error Guide](./docs/context7/troubleshooting.md) - Solutions to common issues
+- **Architecture**: [System Design](./docs/architecture.md) - Technical architecture
+- **Examples**: [Code Samples](./examples/) - Runnable examples
+- **FAQ**: [Common Questions](./docs/faq.md) - Frequently asked questions
+
 ## Support
 
-- **Issues**: [GitHub Issues](https://github.com/binhnguyenduc/vietqr/issues)
-- **Documentation**: [API Reference](./docs/api/)
+- **Issues**: [GitHub Issues](https://github.com/binhnguyenduc/vietqr-ts/issues)
+- **Discussions**: [GitHub Discussions](https://github.com/binhnguyenduc/vietqr-ts/discussions)
 - **Specification**: [NAPAS IBFT v1.5.2](https://napas.com.vn)
 
 ---
