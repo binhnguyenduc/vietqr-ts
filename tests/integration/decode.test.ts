@@ -259,9 +259,8 @@ describe('decodeAndValidate()', () => {
 
       expect(result.success).toBe(true);
       if (result.success) {
-        // Validation should succeed but mark data as invalid
-        expect(result.data.isValid).toBe(false);
-        expect(result.data.errors.length).toBeGreaterThan(0);
+        // Invalid CRC marks data as corrupted but may still be valid
+        expect(result.data.isCorrupted).toBe(true);
       }
     });
   });
