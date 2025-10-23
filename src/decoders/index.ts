@@ -28,7 +28,7 @@ import { extractQRString } from './qr-extractor';
  * @example
  * ```typescript
  * import fs from 'fs/promises';
- * import { decode } from 'vietqr';
+ * import { decode } from 'vietqr-ts';
  *
  * const imageBuffer = await fs.readFile('qr-code.png');
  * const result = decode(imageBuffer);
@@ -129,7 +129,7 @@ export function decode(imageBuffer: Buffer | Uint8Array): ParseResult<VietQRData
  *
  * @example
  * ```typescript
- * import { decodeAndValidate } from 'vietqr';
+ * import { decodeAndValidate } from 'vietqr-ts';
  *
  * const result = decodeAndValidate(imageBuffer);
  *

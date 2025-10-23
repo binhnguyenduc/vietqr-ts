@@ -45,7 +45,7 @@ interface ValidationResult {
 #### Basic Validation
 
 ```typescript
-import { parse, validate } from 'vietqr';
+import { parse, validate } from 'vietqr-ts';
 
 const parseResult = parse(qrString);
 
@@ -66,7 +66,7 @@ if (parseResult.success) {
 #### Check for Corruption
 
 ```typescript
-import { parse, validate } from 'vietqr';
+import { parse, validate } from 'vietqr-ts';
 
 const parseResult = parse(qrString);
 const validation = validate(parseResult.data, qrString);
@@ -79,7 +79,7 @@ if (validation.isCorrupted) {
 #### Handle Warnings
 
 ```typescript
-import { parse, validate } from 'vietqr';
+import { parse, validate } from 'vietqr-ts';
 
 const parseResult = parse(qrString);
 const validation = validate(parseResult.data, qrString);
@@ -156,7 +156,7 @@ interface CustomFieldLimits {
 #### Skip CRC Check for Performance
 
 ```typescript
-import { parse, validateWithOptions } from 'vietqr';
+import { parse, validateWithOptions } from 'vietqr-ts';
 
 const parseResult = parse(qrString);
 
@@ -169,7 +169,7 @@ const validation = validateWithOptions(parseResult.data, qrString, {
 #### Custom Field Limits
 
 ```typescript
-import { parse, validateWithOptions } from 'vietqr';
+import { parse, validateWithOptions } from 'vietqr-ts';
 
 const parseResult = parse(qrString);
 
@@ -186,7 +186,7 @@ const validation = validateWithOptions(parseResult.data, qrString, {
 #### Treat Warnings as Errors
 
 ```typescript
-import { parse, validateWithOptions } from 'vietqr';
+import { parse, validateWithOptions } from 'vietqr-ts';
 
 const parseResult = parse(qrString);
 
@@ -204,7 +204,7 @@ if (!validation.isValid) {
 #### Skip Corruption Detection
 
 ```typescript
-import { parse, validateWithOptions } from 'vietqr';
+import { parse, validateWithOptions } from 'vietqr-ts';
 
 const parseResult = parse(qrString);
 
@@ -219,7 +219,7 @@ const validation = validateWithOptions(parseResult.data, qrString, {
 #### Combined Options
 
 ```typescript
-import { parse, validateWithOptions } from 'vietqr';
+import { parse, validateWithOptions } from 'vietqr-ts';
 
 const parseResult = parse(qrString);
 
@@ -356,7 +356,7 @@ import {
   validate,
   isSuccessResult,
   ValidationErrorCode
-} from 'vietqr';
+} from 'vietqr-ts';
 
 const parseResult = parse(qrString);
 
@@ -412,7 +412,7 @@ console.log('✅ Validation passed');
 ### Custom Validation Rules
 
 ```typescript
-import { parse, validateWithOptions, ValidationErrorCode } from 'vietqr';
+import { parse, validateWithOptions, ValidationErrorCode } from 'vietqr-ts';
 
 function validateBankSpecificRules(qrString: string) {
   const parseResult = parse(qrString);

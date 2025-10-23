@@ -2,8 +2,13 @@
 
 TypeScript library for generating, parsing, and validating EMVCo-compliant VietQR data strings based on NAPAS IBFT v1.5.2 specification.
 
-[![npm version](https://img.shields.io/npm/v/vietqr.svg)](https://www.npmjs.com/package/vietqr)
+[![npm version](https://img.shields.io/npm/v/vietqr-ts.svg)](https://www.npmjs.com/package/vietqr-ts)
+[![CI Status](https://github.com/binhnguyenduc/vietqr-ts/workflows/CI/badge.svg)](https://github.com/binhnguyenduc/vietqr-ts/actions)
+[![codecov](https://codecov.io/gh/binhnguyenduc/vietqr-ts/branch/main/graph/badge.svg)](https://codecov.io/gh/binhnguyenduc/vietqr-ts)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Node Version](https://img.shields.io/badge/node-%3E%3D18.0.0-brightgreen)](https://nodejs.org)
+[![npm downloads](https://img.shields.io/npm/dm/vietqr-ts.svg)](https://www.npmjs.com/package/vietqr-ts)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.9-blue.svg)](https://www.typescriptlang.org/)
 
 ## Features
 
@@ -19,7 +24,7 @@ TypeScript library for generating, parsing, and validating EMVCo-compliant VietQ
 ## Installation
 
 ```bash
-npm install vietqr
+npm install vietqr-ts
 ```
 
 ## Quick Start
@@ -27,7 +32,7 @@ npm install vietqr
 ### Generate VietQR
 
 ```typescript
-import { generateVietQR } from 'vietqr';
+import { generateVietQR } from 'vietqr-ts';
 
 // Generate static QR (user enters amount)
 const staticQR = generateVietQR({
@@ -51,7 +56,7 @@ const dynamicQR = generateVietQR({
 ### Generate QR Code Image
 
 ```typescript
-import { generateQRImage } from 'vietqr';
+import { generateQRImage } from 'vietqr-ts';
 
 const result = await generateQRImage({
   bankBin: '970422',
@@ -80,7 +85,7 @@ document.getElementById('qr-image').src = result.dataUrl;
 ### Parse VietQR String
 
 ```typescript
-import { parse } from 'vietqr';
+import { parse } from 'vietqr-ts';
 
 const qrString = "00020101021238570010A00000072701390006970422011301234567890200208QRIBFTTA53037045405500005802VN62160812Test Payment6304XXXX";
 const result = parse(qrString);
@@ -100,7 +105,7 @@ if (result.success) {
 ### Validate Parsed Data
 
 ```typescript
-import { parse, validate } from 'vietqr';
+import { parse, validate } from 'vietqr-ts';
 
 const parseResult = parse(qrString);
 
@@ -322,7 +327,7 @@ import {
   isErrorResult,
   isDynamicQR,
   isStaticQR
-} from 'vietqr';
+} from 'vietqr-ts';
 
 // Check parse result status
 if (isSuccessResult(result)) {
@@ -348,7 +353,7 @@ if (isStaticQR(data)) {
 #### CRC Functions
 
 ```typescript
-import { calculateCRC, verifyCRC } from 'vietqr';
+import { calculateCRC, verifyCRC } from 'vietqr-ts';
 
 // Calculate CRC for QR string (without CRC field)
 const qrWithoutCRC = "00020101021238570010A00000072701390006970422011301234567890200208QRIBFTTA53037045405500005802VN62160812Test Payment6304";
@@ -368,7 +373,7 @@ import {
   DEFAULT_CURRENCY,
   DEFAULT_COUNTRY,
   DEFAULT_MCC
-} from 'vietqr';
+} from 'vietqr-ts';
 
 console.log(NAPAS_GUID);        // "A000000727"
 console.log(DEFAULT_CURRENCY);  // "704" (VND)
@@ -383,7 +388,7 @@ console.log(DEFAULT_MCC);       // "5812" (Restaurants)
 VietQR validates all input data before generating QR codes. Use `validateVietQRConfig()` to validate configurations or catch `ValidationError` exceptions:
 
 ```typescript
-import { validateVietQRConfig, ValidationContext, ValidationError, type ValidationErrorCode } from 'vietqr';
+import { validateVietQRConfig, ValidationContext, ValidationError, type ValidationErrorCode } from 'vietqr-ts';
 
 // Option 1: Validate configuration explicitly
 const config = {
@@ -453,7 +458,7 @@ try {
 ### Parse Errors
 
 ```typescript
-import { DecodingErrorType } from 'vietqr';
+import { DecodingErrorType } from 'vietqr-ts';
 
 const result = parse(qrString);
 
@@ -476,7 +481,7 @@ if (!result.success) {
 ### Decoding Validation Errors
 
 ```typescript
-import { ValidationErrorCode } from 'vietqr';
+import { ValidationErrorCode } from 'vietqr-ts';
 
 validation.errors.forEach(error => {
   switch (error.code) {
@@ -607,7 +612,7 @@ import type {
   ValidationResult,
   ValidationError,
   DecodingError
-} from 'vietqr';
+} from 'vietqr-ts';
 
 // All types are exported and fully documented
 ```
@@ -631,7 +636,7 @@ VietQR works in both Node.js and modern browsers:
   <div id="qr-container"></div>
 
   <script type="module">
-    import { generateQRImage } from 'https://unpkg.com/vietqr';
+    import { generateQRImage } from 'https://unpkg.com/vietqr-ts';
 
     const result = await generateQRImage({
       bankBin: '970422',
@@ -694,7 +699,7 @@ Contributions are welcome! Please read our [Contributing Guide](CONTRIBUTING.md)
 
 ## License
 
-MIT © [Your Name]
+MIT © Binh Nguyen
 
 ## Related Projects
 

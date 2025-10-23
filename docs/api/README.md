@@ -9,13 +9,13 @@ VietQR is a TypeScript library for generating and decoding Vietnamese QR payment
 ## Installation
 
 ```bash
-npm install vietqr
+npm install vietqr-ts
 ```
 
 ## Quick Start
 
 ```typescript
-import { generateVietQR, generateQRImage } from 'vietqr';
+import { generateVietQR, generateQRImage } from 'vietqr-ts';
 
 // Generate VietQR data
 const qrData = generateVietQR({
@@ -352,7 +352,7 @@ import {
   generateVietQR,
   generateQRImage,
   validateVietQRConfig
-} from 'vietqr';
+} from 'vietqr-ts';
 
 // 1. Validate configuration
 const config = {
@@ -386,7 +386,7 @@ import {
   validate,
   isSuccessResult,
   isErrorResult
-} from 'vietqr';
+} from 'vietqr-ts';
 
 // 1. Parse QR string
 const parseResult = parse(qrString);
@@ -421,7 +421,7 @@ import {
   decode,
   validate,
   isSuccessResult
-} from 'vietqr';
+} from 'vietqr-ts';
 
 // 1. Decode image
 const decodeResult = decode(imageBuffer);
@@ -451,7 +451,7 @@ import {
   parseWithOptions,
   validateWithOptions,
   isSuccessResult
-} from 'vietqr';
+} from 'vietqr-ts';
 
 // 1. Parse with strict mode
 const parseResult = parseWithOptions(qrString, {
@@ -503,7 +503,7 @@ import type {
   ValidationError,
   ValidationWarning,
   DecodingError
-} from 'vietqr';
+} from 'vietqr-ts';
 ```
 
 ### Type Guards
@@ -514,7 +514,7 @@ import {
   isErrorResult,
   isDynamicQR,
   isStaticQR
-} from 'vietqr';
+} from 'vietqr-ts';
 
 const result = parse(qrString);
 
@@ -537,8 +537,8 @@ if (isErrorResult(result)) {
 
 ## Support
 
-- **Documentation**: [https://github.com/binhnguyenduc/vietqr](https://github.com/binhnguyenduc/vietqr)
-- **Issues**: [https://github.com/binhnguyenduc/vietqr/issues](https://github.com/binhnguyenduc/vietqr/issues)
+- **Documentation**: [https://github.com/binhnguyenduc/vietqr-ts](https://github.com/binhnguyenduc/vietqr-ts)
+- **Issues**: [https://github.com/binhnguyenduc/vietqr-ts/issues](https://github.com/binhnguyenduc/vietqr-ts/issues)
 - **Specification**: NAPAS IBFT v1.5.2
 
 ## License

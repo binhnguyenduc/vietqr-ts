@@ -8,7 +8,7 @@
  *
  * @example
  * ```typescript
- * import { generateVietQR } from 'vietqr';
+ * import { generateVietQR } from 'vietqr-ts';
  *
  * // Generate static account QR
  * const result = generateVietQR({

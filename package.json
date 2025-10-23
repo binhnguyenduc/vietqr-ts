@@ -1,5 +1,5 @@
 {
-  "name": "vietqr",
+  "name": "vietqr-ts",
   "version": "0.1.0",
   "description": "TypeScript library for generating EMVCo-compliant VietQR data strings based on NAPAS IBFT v1.5.2 specification",
   "type": "module",
@@ -16,6 +16,10 @@
   "files": [
     "dist"
   ],
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "sideEffects": false,
   "scripts": {
     "build": "tsup",
     "test": "vitest",
@@ -34,16 +38,16 @@
     "vietnam",
     "banking"
   ],
-  "author": "",
+  "author": "Binh Nguyen <binh.d.nguyen165@gmail.com>",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/binhnguyenduc/vietqr.git"
+    "url": "https://github.com/binhnguyenduc/vietqr-ts.git"
   },
   "bugs": {
-    "url": "https://github.com/binhnguyenduc/vietqr/issues"
+    "url": "https://github.com/binhnguyenduc/vietqr-ts/issues"
   },
-  "homepage": "https://github.com/binhnguyenduc/vietqr#readme",
+  "homepage": "https://github.com/binhnguyenduc/vietqr-ts#readme",
   "devDependencies": {
     "@eslint/js": "^9.38.0",
     "@types/pngjs": "^6.0.5",

@@ -89,7 +89,7 @@ interface QRField {
 #### Static Account QR (Reusable)
 
 ```typescript
-import { generateVietQR } from 'vietqr';
+import { generateVietQR } from 'vietqr-ts';
 
 // Generate reusable QR for account
 const qr = generateVietQR({
@@ -106,7 +106,7 @@ console.log('CRC:', qr.crc);
 #### Dynamic QR with Amount (One-time)
 
 ```typescript
-import { generateVietQR } from 'vietqr';
+import { generateVietQR } from 'vietqr-ts';
 
 // Generate one-time QR with specific amount
 const qr = generateVietQR({
@@ -124,7 +124,7 @@ console.log('QR String:', qr.rawData);
 #### Card-based QR
 
 ```typescript
-import { generateVietQR } from 'vietqr';
+import { generateVietQR } from 'vietqr-ts';
 
 const qr = generateVietQR({
   bankBin: '970403',
@@ -137,7 +137,7 @@ const qr = generateVietQR({
 #### Complete Configuration
 
 ```typescript
-import { generateVietQR } from 'vietqr';
+import { generateVietQR } from 'vietqr-ts';
 
 const qr = generateVietQR({
   bankBin: '970403',
@@ -159,7 +159,7 @@ console.log('Fields:', qr.fields.map(f => `${f.id}: ${f.value}`));
 #### Error Handling
 
 ```typescript
-import { generateVietQR, ValidationError, AggregateValidationError } from 'vietqr';
+import { generateVietQR, ValidationError, AggregateValidationError } from 'vietqr-ts';
 
 try {
   const qr = generateVietQR({
@@ -263,7 +263,7 @@ interface QRImageResult {
 #### Basic PNG QR Code
 
 ```typescript
-import { generateVietQR, generateQRImage } from 'vietqr';
+import { generateVietQR, generateQRImage } from 'vietqr-ts';
 
 // Generate VietQR data
 const qrData = generateVietQR({
@@ -285,7 +285,7 @@ console.log('Data URI:', image.dataURI);
 #### SVG QR Code
 
 ```typescript
-import { generateVietQR, generateQRImage } from 'vietqr';
+import { generateVietQR, generateQRImage } from 'vietqr-ts';
 
 const qrData = generateVietQR({
   bankBin: '970403',
@@ -307,7 +307,7 @@ console.log('<img src="' + image.dataURI + '" />');
 #### Custom Size and Colors
 
 ```typescript
-import { generateQRImage } from 'vietqr';
+import { generateQRImage } from 'vietqr-ts';
 
 const image = await generateQRImage({
   data: qrData.rawData,
@@ -325,7 +325,7 @@ const image = await generateQRImage({
 
 ```typescript
 import { writeFileSync } from 'fs';
-import { generateVietQR, generateQRImage } from 'vietqr';
+import { generateVietQR, generateQRImage } from 'vietqr-ts';
 
 const qrData = generateVietQR({
   bankBin: '970403',
@@ -352,7 +352,7 @@ console.log('QR code saved to qr-code.png');
 #### Display in Browser
 
 ```typescript
-import { generateVietQR, generateQRImage } from 'vietqr';
+import { generateVietQR, generateQRImage } from 'vietqr-ts';
 
 async function displayQRCode() {
   const qrData = generateVietQR({
@@ -381,7 +381,7 @@ async function displayQRCode() {
 #### Error Handling
 
 ```typescript
-import { generateQRImage, ImageEncodingError } from 'vietqr';
+import { generateQRImage, ImageEncodingError } from 'vietqr-ts';
 
 try {
   const image = await generateQRImage({
@@ -410,7 +410,7 @@ try {
 ### Generate and Display QR Code
 
 ```typescript
-import { generateVietQR, generateQRImage, validateVietQRConfig } from 'vietqr';
+import { generateVietQR, generateQRImage, validateVietQRConfig } from 'vietqr-ts';
 
 async function createPaymentQR(
   bankBin: string,
@@ -482,7 +482,7 @@ if (result.success) {
 
 ```typescript
 import express from 'express';
-import { generateVietQR, generateQRImage, ValidationError } from 'vietqr';
+import { generateVietQR, generateQRImage, ValidationError } from 'vietqr-ts';
 
 const app = express();
 app.use(express.json());
@@ -558,7 +558,7 @@ app.listen(3000, () => {
 ### Batch Generation
 
 ```typescript
-import { generateVietQR, generateQRImage } from 'vietqr';
+import { generateVietQR, generateQRImage } from 'vietqr-ts';
 import { writeFileSync } from 'fs';
 
 interface PaymentRequest {

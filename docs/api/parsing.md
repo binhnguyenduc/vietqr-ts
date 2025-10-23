@@ -31,7 +31,7 @@ interface ParseResult<T> {
 ### Examples
 
 ```typescript
-import { parse } from 'vietqr';
+import { parse } from 'vietqr-ts';
 
 // Parse a VietQR string
 const result = parse('00020101021238540010A00000072701240006970403011301234567...');
@@ -48,7 +48,7 @@ if (result.success) {
 ### Error Handling
 
 ```typescript
-import { parse, isErrorResult, DecodingErrorType } from 'vietqr';
+import { parse, isErrorResult, DecodingErrorType } from 'vietqr-ts';
 
 const result = parse(qrString);
 
@@ -106,7 +106,7 @@ interface ParseOptions {
 #### Strict Mode
 
 ```typescript
-import { parseWithOptions } from 'vietqr';
+import { parseWithOptions } from 'vietqr-ts';
 
 // Reject QR codes missing any essential fields
 const result = parseWithOptions(qrString, {
@@ -121,7 +121,7 @@ if (!result.success) {
 #### Extract Partial Data
 
 ```typescript
-import { parseWithOptions } from 'vietqr';
+import { parseWithOptions } from 'vietqr-ts';
 
 // Extract whatever fields are available
 const result = parseWithOptions(corruptedQR, {
@@ -141,7 +141,7 @@ if (result.success) {
 #### Custom Length Limit
 
 ```typescript
-import { parseWithOptions } from 'vietqr';
+import { parseWithOptions } from 'vietqr-ts';
 
 // Custom maximum length
 const result = parseWithOptions(qrString, {
@@ -152,7 +152,7 @@ const result = parseWithOptions(qrString, {
 #### Combined Options
 
 ```typescript
-import { parseWithOptions } from 'vietqr';
+import { parseWithOptions } from 'vietqr-ts';
 
 const result = parseWithOptions(qrString, {
   strictMode: true,
@@ -284,7 +284,7 @@ function isSuccessResult<T>(result: ParseResult<T>): result is {
 
 **Example**:
 ```typescript
-import { parse, isSuccessResult } from 'vietqr';
+import { parse, isSuccessResult } from 'vietqr-ts';
 
 const result = parse(qrString);
 
@@ -306,7 +306,7 @@ function isErrorResult<T>(result: ParseResult<T>): result is {
 
 **Example**:
 ```typescript
-import { parse, isErrorResult } from 'vietqr';
+import { parse, isErrorResult } from 'vietqr-ts';
 
 const result = parse(qrString);
 

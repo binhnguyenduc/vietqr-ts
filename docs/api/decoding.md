@@ -28,7 +28,7 @@ function decode(
 
 ```typescript
 import { readFileSync } from 'fs';
-import { decode } from 'vietqr';
+import { decode } from 'vietqr-ts';
 
 // Read image file
 const imageBuffer = readFileSync('qr-code.png');
@@ -49,7 +49,7 @@ if (result.success) {
 
 ```typescript
 import fetch from 'node-fetch';
-import { decode } from 'vietqr';
+import { decode } from 'vietqr-ts';
 
 // Fetch QR code image
 const response = await fetch('https://example.com/qr-code.png');
@@ -66,7 +66,7 @@ if (result.success) {
 #### Decode from Base64
 
 ```typescript
-import { decode } from 'vietqr';
+import { decode } from 'vietqr-ts';
 
 // Convert base64 to buffer
 const base64Image = 'iVBORw0KGgoAAAANS...';
@@ -79,7 +79,7 @@ const result = decode(imageBuffer);
 #### Error Handling
 
 ```typescript
-import { decode, DecodingErrorType } from 'vietqr';
+import { decode, DecodingErrorType } from 'vietqr-ts';
 
 const result = decode(imageBuffer);
 
@@ -139,7 +139,7 @@ function decodeAndValidate(
 #### Basic Usage
 
 ```typescript
-import { decodeAndValidate } from 'vietqr';
+import { decodeAndValidate } from 'vietqr-ts';
 
 const result = decodeAndValidate(imageBuffer);
 
@@ -166,7 +166,7 @@ import {
   decodeAndValidate,
   isSuccessResult,
   ValidationErrorCode
-} from 'vietqr';
+} from 'vietqr-ts';
 
 const result = decodeAndValidate(imageBuffer);
 
@@ -213,7 +213,7 @@ console.log('✅ QR code is valid');
 
 ```typescript
 import { readFileSync } from 'fs';
-import { decodeAndValidate } from 'vietqr';
+import { decodeAndValidate } from 'vietqr-ts';
 
 function processQRImage(imagePath: string) {
   try {
@@ -279,7 +279,7 @@ function isValidImageSize(
 
 **Example**:
 ```typescript
-import { isValidImageSize, MAX_IMAGE_SIZE } from 'vietqr';
+import { isValidImageSize, MAX_IMAGE_SIZE } from 'vietqr-ts';
 
 if (!isValidImageSize(imageBuffer)) {
   console.error(`Image too large (max ${MAX_IMAGE_SIZE} bytes)`);
@@ -311,7 +311,7 @@ type ImageFormat = 'png' | 'jpeg' | 'unknown';
 
 **Example**:
 ```typescript
-import { detectImageFormat } from 'vietqr';
+import { detectImageFormat } from 'vietqr-ts';
 
 const format = detectImageFormat(imageBuffer);
 
@@ -345,7 +345,7 @@ const MAX_IMAGE_SIZE: number; // 10 MB
 
 **Usage**:
 ```typescript
-import { MAX_IMAGE_SIZE } from 'vietqr';
+import { MAX_IMAGE_SIZE } from 'vietqr-ts';
 
 console.log(`Maximum image size: ${MAX_IMAGE_SIZE} bytes`);
 console.log(`Maximum image size: ${MAX_IMAGE_SIZE / 1024 / 1024} MB`);
@@ -360,7 +360,7 @@ console.log(`Maximum image size: ${MAX_IMAGE_SIZE / 1024 / 1024} MB`);
 ```typescript
 import express from 'express';
 import multer from 'multer';
-import { decodeAndValidate, isSuccessResult, MAX_IMAGE_SIZE } from 'vietqr';
+import { decodeAndValidate, isSuccessResult, MAX_IMAGE_SIZE } from 'vietqr-ts';
 
 const app = express();
 const upload = multer({
@@ -423,7 +423,7 @@ app.listen(3000, () => {
 ```typescript
 import { readdirSync, readFileSync } from 'fs';
 import { join } from 'path';
-import { decode, isSuccessResult } from 'vietqr';
+import { decode, isSuccessResult } from 'vietqr-ts';
 
 function batchDecodeQRImages(directoryPath: string) {
   const files = readdirSync(directoryPath);
@@ -486,7 +486,7 @@ import {
   decode,
   validate,
   isSuccessResult
-} from 'vietqr';
+} from 'vietqr-ts';
 
 function validateQRImagePipeline(imagePath: string, qrString?: string) {
   // Step 1: Read image

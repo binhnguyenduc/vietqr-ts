@@ -25,7 +25,7 @@ function calculateCRC(data: string): string
 #### Examples
 
 ```typescript
-import { calculateCRC } from 'vietqr';
+import { calculateCRC } from 'vietqr-ts';
 
 // Calculate CRC for partial QR string
 const partialQR = '00020101021238540010A000000727012400069704030113012345676304';
@@ -69,7 +69,7 @@ function verifyCRC(qrString: string): boolean
 #### Examples
 
 ```typescript
-import { verifyCRC } from 'vietqr';
+import { verifyCRC } from 'vietqr-ts';
 
 const qrString = '00020101021238540010A00000072701240006970403011301234567630463049876';
 
@@ -83,7 +83,7 @@ if (verifyCRC(qrString)) {
 #### Validation Logic
 
 ```typescript
-import { verifyCRC, calculateCRC } from 'vietqr';
+import { verifyCRC, calculateCRC } from 'vietqr-ts';
 
 // Manual CRC verification
 const qrString = '...';
@@ -125,7 +125,7 @@ function encodeField(id: string, value: string): string
 #### Examples
 
 ```typescript
-import { encodeField } from 'vietqr';
+import { encodeField } from 'vietqr-ts';
 
 // Encode merchant category
 const mcc = encodeField('52', '0000');
@@ -150,7 +150,7 @@ Length is encoded as 2-digit decimal number:
 - Zero-padded (e.g., `"05"` for length 5)
 
 ```typescript
-import { encodeField } from 'vietqr';
+import { encodeField } from 'vietqr-ts';
 
 console.log(encodeField('01', 'A'));        // "010141"
 console.log(encodeField('01', 'AB'));       // "010242"
@@ -201,7 +201,7 @@ interface QRField {
 #### Examples
 
 ```typescript
-import { encodeFieldWithDetails } from 'vietqr';
+import { encodeFieldWithDetails } from 'vietqr-ts';
 
 // Encode with details
 const field = encodeFieldWithDetails('54', '50000');
@@ -217,7 +217,7 @@ if (field) {
 #### Validation
 
 ```typescript
-import { encodeFieldWithDetails } from 'vietqr';
+import { encodeFieldWithDetails } from 'vietqr-ts';
 
 // Invalid ID (not 2 digits)
 const invalid1 = encodeFieldWithDetails('1', 'value');
@@ -257,7 +257,7 @@ function isDynamicQR(data: VietQRData): boolean
 #### Examples
 
 ```typescript
-import { parse, isDynamicQR, isSuccessResult } from 'vietqr';
+import { parse, isDynamicQR, isSuccessResult } from 'vietqr-ts';
 
 const result = parse(qrString);
 
@@ -274,7 +274,7 @@ if (isSuccessResult(result)) {
 #### Use Cases
 
 ```typescript
-import { parse, isDynamicQR, isSuccessResult } from 'vietqr';
+import { parse, isDynamicQR, isSuccessResult } from 'vietqr-ts';
 
 function processPayment(qrString: string) {
   const result = parse(qrString);
@@ -323,7 +323,7 @@ function isStaticQR(data: VietQRData): boolean
 #### Examples
 
 ```typescript
-import { parse, isStaticQR, isSuccessResult } from 'vietqr';
+import { parse, isStaticQR, isSuccessResult } from 'vietqr-ts';
 
 const result = parse(qrString);
 
@@ -339,7 +339,7 @@ if (isSuccessResult(result)) {
 #### Payment Flow
 
 ```typescript
-import { parse, isStaticQR, isSuccessResult } from 'vietqr';
+import { parse, isStaticQR, isSuccessResult } from 'vietqr-ts';
 
 function createPaymentIntent(qrString: string, userAmount?: string) {
   const result = parse(qrString);
@@ -386,7 +386,7 @@ const NAPAS_GUID = "A000000727";
 
 **Usage**:
 ```typescript
-import { NAPAS_GUID } from 'vietqr';
+import { NAPAS_GUID } from 'vietqr-ts';
 
 console.log('NAPAS GUID:', NAPAS_GUID); // "A000000727"
 
@@ -406,7 +406,7 @@ const DEFAULT_CURRENCY = "704";
 
 **Usage**:
 ```typescript
-import { DEFAULT_CURRENCY } from 'vietqr';
+import { DEFAULT_CURRENCY } from 'vietqr-ts';
 
 console.log('VND Currency Code:', DEFAULT_CURRENCY); // "704"
 ```
@@ -423,7 +423,7 @@ const DEFAULT_COUNTRY = "VN";
 
 **Usage**:
 ```typescript
-import { DEFAULT_COUNTRY } from 'vietqr';
+import { DEFAULT_COUNTRY } from 'vietqr-ts';
 
 console.log('Vietnam Country Code:', DEFAULT_COUNTRY); // "VN"
 ```
@@ -440,7 +440,7 @@ const DEFAULT_MCC = "0000";
 
 **Usage**:
 ```typescript
-import { DEFAULT_MCC } from 'vietqr';
+import { DEFAULT_MCC } from 'vietqr-ts';
 
 console.log('Default MCC:', DEFAULT_MCC); // "0000"
 ```
@@ -452,7 +452,7 @@ console.log('Default MCC:', DEFAULT_MCC); // "0000"
 ### Build QR String Manually
 
 ```typescript
-import { encodeField, calculateCRC, NAPAS_GUID } from 'vietqr';
+import { encodeField, calculateCRC, NAPAS_GUID } from 'vietqr-ts';
 
 // Build QR string step by step
 const fields = [
@@ -479,7 +479,7 @@ console.log('Complete QR:', completeQR);
 ### Verify and Extract QR Components
 
 ```typescript
-import { verifyCRC, encodeField } from 'vietqr';
+import { verifyCRC, encodeField } from 'vietqr-ts';
 
 function analyzeQRString(qrString: string) {
   // Verify CRC first
@@ -511,7 +511,7 @@ function analyzeQRString(qrString: string) {
 ### Custom Field Encoder
 
 ```typescript
-import { encodeField } from 'vietqr';
+import { encodeField } from 'vietqr-ts';
 
 class QRBuilder {
   private fields: Map<string, string> = new Map();
@@ -563,7 +563,7 @@ import {
   isErrorResult,
   isDynamicQR,
   isStaticQR
-} from 'vietqr';
+} from 'vietqr-ts';
 
 function processQRCode(qrString: string) {
   const result = parse(qrString);
