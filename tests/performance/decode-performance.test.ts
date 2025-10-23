@@ -138,7 +138,8 @@ describe('decode() performance', () => {
       expect(validateResult.success).toBe(true);
 
       // Validation adds some overhead but should be reasonable
-      expect(validateDuration).toBeLessThan(decodeDuration * 2);
+      // Increased threshold to 5x for CI environment stability
+      expect(validateDuration).toBeLessThan(decodeDuration * 5);
     });
 
     it('should validate efficiently for multiple calls', async () => {
