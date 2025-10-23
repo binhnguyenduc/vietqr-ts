@@ -1,6 +1,6 @@
 {
   "name": "vietqr-ts",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "TypeScript library for generating EMVCo-compliant VietQR data strings based on NAPAS IBFT v1.5.2 specification",
   "type": "module",
   "main": "./dist/index.cjs",

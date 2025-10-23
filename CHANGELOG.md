@@ -7,9 +7,36 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.0.0] - 2025-01-23
+
 ### Changed
-- Package name changed from `vietqr` to `vietqr-ts` (npm registry conflict)
+- **BREAKING**: Package name changed from `vietqr` to `vietqr-ts` (npm registry conflict)
 - Updated all documentation to reflect new package name
+- Dropped Node.js 18 support (minimum version: Node.js 20.x)
+
+### Added
+- LICENSE file with MIT license text
+- CONTRIBUTING.md with development guidelines
+- SECURITY.md with vulnerability reporting process
+- CODE_OF_CONDUCT.md (Contributor Covenant v2.1)
+- GitHub issue templates (bug report, feature request)
+- GitHub pull request template
+- Dependabot configuration for automated dependency updates
+- Automated release workflow with npm publishing
+- Publish validation in CI workflow
+- Comprehensive examples directory with runnable code samples
+- Architecture documentation (docs/architecture.md)
+- FAQ documentation (docs/faq.md)
+- Repository badges in README
+
+### Fixed
+- Security audit now fails CI on vulnerabilities
+- Updated vite to 7.1.12 to resolve security vulnerability (GHSA-93m4-6634-74q7)
+
+### Improved
+- Enhanced CI workflow with Node.js 20.x and 22.x testing
+- Added package validation and dry-run publish checks in CI
+- Updated GitHub Actions to latest versions (checkout@v5, setup-node@v6)
 
 ## [0.1.1] - 2024-10-23
 
