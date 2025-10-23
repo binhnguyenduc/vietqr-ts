@@ -693,6 +693,15 @@ VietQR implements:
 - ✅ **ISO 3166-1**: Country codes (Vietnam = VN)
 - ✅ **CRC-16-CCITT**: Checksum verification with polynomial 0x1021
 
+## Roadmap
+
+See our [Roadmap](ROADMAP.md) for upcoming features and long-term plans:
+
+- 🌍 **Multi-language support** (Vietnamese, English)
+- 📱 **Additional QR formats** (VNPay, MoMo, ZaloPay, ShopeePay)
+- 🌏 **Regional expansion** (Thailand PromptPay, Singapore PayNow, Indonesia QRIS)
+- 🔌 **Framework integrations** (React, Vue, Angular components)
+
 ## Contributing
 
 Contributions are welcome! Please read our [Contributing Guide](CONTRIBUTING.md) before submitting pull requests.
